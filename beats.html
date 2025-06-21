@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jsupreme Beatstore</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Jugghouse Store</a>
+    <a href="beats.html">Jsupreme Beatstore</a>
+    <span id="auth-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </span>
+    <a href="#" id="logout-link" style="display:none;">Logout</a>
+  </nav>
+
+  <h1>Jsupreme Beatstore</h1>
+  <div id="beats-content" style="display:none;">
+    <div class="beat">
+      <h3>Trap Banger #1</h3>
+      <audio controls>
+        <source src="audio/trap-banger-1.mp3" type="audio/mpeg" />
+        Your browser does not support audio playback.
+      </audio>
+      <p>$20.00</p>
+      <button>Buy</button>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    if (localStorage.getItem('loggedIn') === 'true') {
+      document.getElementById('beats-content').style.display = 'block';
+    } else {
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
